@@ -1,0 +1,34 @@
+###
+
+GET http://localhost:3000/post
+
+###
+
+GET http://localhost:3000/post?sender=1
+
+###
+
+GET http://localhost:3000/post/6963bc1c1b636f331dae94a4
+
+###
+POST http://localhost:3000/post
+Content-Type: application/json  
+
+{
+  "text": "new post",
+  "img": "image_url",
+  "sender": "2"
+}
+
+###
+DELETE http://localhost:3000/post/6963bc121b636f331dae949d
+
+
+###
+PUT http://localhost:3000/post/6963bc121b636f331dae949d
+Content-Type: application/json  
+
+{
+  "text": "Inception",
+  "img": "image_url_updated"
+}
