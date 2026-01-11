@@ -1,11 +1,14 @@
 import express, { Express } from "express";
 import mongoose from "mongoose";
+import postsRouter from "./routes/postRoute";
 import dotenv from "dotenv";
-dotenv.config({ path: ".env.dev" });
+dotenv.config({ path: '.env.dev' });
 
 const app = express();
 
 app.use(express.json());
+
+app.use("/post", postsRouter);
 
 const initApp = async () => {
   const pr = new Promise<Express>((resolve, reject) => {
