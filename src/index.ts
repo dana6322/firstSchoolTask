@@ -1,6 +1,7 @@
 import express, { Express } from "express";
 import mongoose from "mongoose";
-import postsRouter from "./routes/postRoute";
+import postRouter from "./routes/postRoute";
+import commentRouter from './routes/commentRoute'
 import dotenv from "dotenv";
 dotenv.config({ path: '.env.dev' });
 
@@ -8,7 +9,8 @@ const app = express();
 
 app.use(express.json());
 
-app.use("/post", postsRouter);
+app.use("/post", postRouter);
+app.use("/comment", commentRouter);
 
 const initApp = async () => {
   const pr = new Promise<Express>((resolve, reject) => {
